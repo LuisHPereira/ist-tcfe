@@ -1,0 +1,88 @@
+\newpage{}
+
+\section{Simulation Analysis}
+\label{sec:simulation}
+%\paragraph{}
+\subsection{For $t<0$}
+
+\par Through the usage of NGSpice, the first simulation carried out was with a circuit similar to the one analyzed in the first section of the theoretical analysis. For simulation purposes, note that an extra voltage source was introduced into the circuit, in order to control the current passing through the dependent voltage source, acting as an anmeter. The results obtained are shown in the table \ref{sim1} below.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{../sim/1_TAB.tex}
+  \end{tabular}
+  \caption{Operating point. A variable preceded by @ is of type {\em current}
+    and expressed in Ampere; other variables are of type {\it voltage} and expressed in
+    Volt.}
+  \label{sim1}
+\end{table}
+
+\subsection{For $t=0$}
+\paragraph{}
+
+\par  Simulation number 2 sole purpose is to determine a value for $I_x$, which was achieved by setting $v_s$ to 0 and substituting the previously existing capacitor with a voltage source $V_x$. The remaining circuit remains equal to before. Ultimately, this component will impose the same potencial difference between nodes 6 and nodes 8 and will be able to operate at $t=0$. Conducting this simulation is essential to subsequently determine the natural response of the system, through the calculations of values for $V_x$ and $I_x$. The results obtained are shown in the table below.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{../sim/2_TAB.tex}
+  \end{tabular}
+  \caption{Operating point. A variable preceded by @ is of type {\em current}
+    and expressed in Ampere; other variables are of type {\it voltage} and expressed in
+    Volt.}
+  \label{sim2}
+\end{table}
+
+\newpage{}
+\subsection{Natural Solution}
+\paragraph{}
+
+\par The third step of these simulations consisted in making a transient analysis to determine voltage variation in node 6 as the capacitor discharges for the time interval [0,20]ms. The simulated natural response of the circuit is shown in the figure below.
+
+
+
+\begin{figure}[H]
+    \includegraphics[width=0.4\linewidth]{3.pdf}
+    \centering
+    \caption{Natural Solution}
+    \label{mag}
+\end{figure}
+
+
+
+\subsection{Total Solution}
+\paragraph{}
+
+\par Utilizing the same script as in simulation number 3, the fourth simulation conducted intends to evaluate the total response (natural and forced) on node 6 and voltage source Vs for a frequency of 1kHz. The time interval studied is the same as before, [0,20]ms. The simulation results are represented in the following figure \ref{total}.
+
+\begin{figure}[H]
+    \includegraphics[width=0.4\linewidth]{4.pdf}
+    \centering
+    \caption{Total Solution}
+    \label{total}
+\end{figure}
+
+\subsection{Frequency Response}
+\paragraph{}
+
+\par Lastly, this frequency analysis aims to compare the frequency response between $v_s$ and the 6th node. The results obtained are represented in the figures below.
+
+\begin{figure}[H]
+    \includegraphics[width=0.495\linewidth]{5a.pdf}
+    \hfill\includegraphics[width=0.495\linewidth]{5b.pdf}
+    \centering
+    \caption{Magnitude (dB) - Frequency (Hz) / Phase (degrees) - Frequency (Hz)}
+    \label{mag}
+\end{figure}
+
+\par We noticed a significant difference bettween them . The frequency response in $V_s$ is null in opposite to the one seen in n6. This is due to the fact that $V_s$ changes ccording to the frequency, thus remaining constant. $V_6$ on the other hand changes its value according to $V_s$ showing a frequency analysis that changes through time.
+
+
+
+
+
