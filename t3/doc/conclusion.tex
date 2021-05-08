@@ -1,0 +1,77 @@
+\section{Conclusion}
+\label{sec:conclusion}
+\paragraph{}
+\par Now, the graphs and values obtained in Section~\ref{sec:analysis} and Section~\ref{sec:simulation} will be presented side by side and compared.
+\par On the left there will be the graphs of the Theoretical analysis, obtained through Octave and on the right the ones achieved in Simulation with resort to NGSpice will appear.
+\par Below will be presented the values for Ripple and Average voltages in the Envelope Detector and the Voltage Regulator.
+
+
+\begin{table}[H]
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\begin{tabular}{|c|c|}
+		\hline
+		\input{../mat/RipAvg.tex}
+		\end{tabular}
+		\caption{Ripple and Average Voltages for Envelope and Regulator in Theoretical Analysis}
+		\label{table1a}
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\begin{tabular}{|c|c|}
+		\hline
+		\input{../sim/sim_tab.tex}
+	\end{tabular}
+ 		\caption{Ripple and Average Voltages for Envelope and Regulator in Simulation}
+		\label{table1b}
+	\end{minipage} 
+\end{table}
+
+\par With the innacuracy visible between the two analysis above, the group concluded that there is a natural oscilation from NGSpice. The reason is that the diode, being a non-linear component, creates no correlation between
+the current and the voltage, unlike what happened in the previous lab assignments. The exponential function that is used in this situation is possibly the reason for the oscilations.
+\par However the output voltage was still around 12V, which confirms that the discrepancy is not that impactful.
+\par The Merit, calculated through the formula \ref{Merit_Formula} was obtained by both softwares:
+
+\begin{table}[H]
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\begin{tabular}{|c|c|}
+		\hline
+		\input{../mat/MeritTable.tex}
+		\end{tabular}
+		\caption{Merit calculated in Theoretical Analysis}
+		\label{table1a}
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\begin{tabular}{|c|c|}
+		\hline
+		\input{../sim/merit_tab.tex}
+		\end{tabular}
+ 		\caption{Merit calculated in Simulation}
+		\label{table1b}
+	\end{minipage} 
+\end{table}
+
+\par As for the voltage values, the Merit values also came with a slight inaccuracy. The Merit value is low, but the group couldn't make it higher, however the main objective of the assignment was achieved.
+\newpage{}
+\par Now let's take a look at the plots done for the output of the Envelope Detector and the Voltage circuits obtained in Theorical Analysis and in Simulation. Also, the comparison between the graphs of the deviation from the desired DC voltages obtained with Octave and NgSpice.
+
+\begin{figure}[H]
+    \includegraphics[width=0.6\linewidth]{all_vout.eps}
+    \hfill\includegraphics[width=0.495\linewidth]{../sim/simcomp.pdf}
+    \centering
+    \caption{Voltage of the rectifier, Voltage of Envelope Detector and Voltage Regulator (Analysis top vs Simulation bottom)}
+    \label{mag}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.6\linewidth]{deviation.eps}
+    \hfill\includegraphics[width=0.495\linewidth]{../sim/simdev.pdf}
+    \centering
+    \caption{Deviation from the desired DC voltages (Analysis top vs Simulation bottom)}
+    \label{mag}
+\end{figure}
+
+\par It is clear that both plots are almost identical, which proves the success of the simulation. We can also conclude that the Envelope Detector and Voltage circuits designed by the group worked as expected and theorized when simulated.
+

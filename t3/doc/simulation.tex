@@ -1,0 +1,49 @@
+\newpage{}
+
+\section{Simulation Analysis}
+\label{sec:simulation}
+\paragraph{}
+
+
+\par A simulation through NGSpice was conducted to simulate this AC DC converter. The original circuit was slightly simplified to carry the simulation.
+The following table shows the results computed by the simulation: the input voltage of the secondary circuit (v(2)), the ouput voltages of the Envelope Dectector and the Voltage Regulator (v(4) and v(5), respectively).
+
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/sim_tab.tex}
+  \end{tabular}
+  \caption{Ripple and Average Voltages for Envelope and Regulator}
+  \label{sim1}
+\end{table}
+
+\par The value computed for Merit was $4.03\times 10^{-2}$, which was lower than what was expected, meaning the circuit could have been more optimized. However, it was felt that the value was satisfying for the purpose of this assignment.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/merit_tab.tex}
+  \end{tabular}
+  \caption{Merit calculated through NgSpice}
+  \label{sim1}
+\end{table}
+
+\par This simulation also produced the following plot which displays how the voltage of the transformer v(2)-v(3), the voltage of Envelope Detector v(4) and Voltage Regulator v(5), varies with time.
+
+\begin{figure}[H]
+    \includegraphics[width=0.495\linewidth]{../sim/simcomp.pdf}
+    \centering
+    \caption{Voltage of the rectifier, Voltage of Envelope Detector and Voltage Regulator}
+    \label{mag}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.495\linewidth]{../sim/simdev.pdf}
+    \centering
+    \caption{$v_0-12$ (Deviation from the desired DC voltages)}
+    \label{mag}
+\end{figure}
+

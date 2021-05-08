@@ -1,0 +1,74 @@
+\section{Theoretical Analysis}
+\label{sec:analysis}
+\paragraph{}
+\par Initially, a transformer was used to reduce the initial voltage of 230V into a smaller value, thereby enabling the rest of the circuit to approximate it to an output voltage of 12V. Another hurdle that needs to be surpassed is turning the initial AC voltage into a DC voltage and for that, the following circuit configuration, with the following components, was used:
+\par \textbf{1)} Four diode full wave bridge rectifier (on the left), which transforms AC into an equal amplitude unidirectional current. Such computation was achieved by taking the absolute value of the output voltage from the transformer, $V_r$.
+\par \textbf{2)} A capacitor, which was utilized for the purpose of reducing voltage magnitude, approximating it to a DC. To compute this, one seeks to determine whether the diodes are ON or OFF, in which
+\begin{equation}
+	t_{OFF}= \frac{1}{w} arctan(\frac{1}{w R_1 C}). 
+\end{equation}
+For $t<t_{OFF}$, $V_O=V_r$, and otherwise, 
+\begin{equation}
+	V_O=V_s cos(w t_{OFF}) exp(-\frac{t-t_{OFF}}{R_1 C}), 
+\end{equation}
+due to the capacitor. Ripple voltage will be calculated by taking the difference between the max and min value of $V_O$. From now on, $V_O$ will be called $V_{OENV}$.
+\par \textbf{3)} Nineteen diodes in series for the sake of achieving an almost perfect DC. From \textbf{2)}, one is also able to calculate an average value for $V_O$ ($V_{OAVG}$). This value will help to averiguate whether the potential difference between $V_5$ and $V_0$ is limited by the max voltage that could be handled by the diodes or not. Voltage values, $V_O$, from \textbf{2)} are relative to the DC ($V_{ODC}$). To compute the voltage due to AC, one must use the resistance in each diode. $R_D$ to then achieve an expression for $V_O$ due to AC, which is given by:
+
+\begin{equation}
+	V_{OAC} = ndiodes \frac{R_D}{ndiodes R_D + R_2}(V_{OENV} - V_{OAVG}),
+\end{equation}
+in which $R_D$ is the resistance of each diode.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        \input{../mat/RipAvg.tex}
+    \end{tabular}
+    \caption{Ripple and Average Voltages for Envelope and Regulator}
+    \label{table4a}
+\end{table}
+
+\par The merit of the work theorized in this analysis was calculated through a simple form represented in \ref{Merit_Formula}
+
+\begin{equation}
+	M = \frac{1}{cost(ripple(v_0)+average(v_0-12)+10^{-6}}
+	\label{Merit_Formula}
+\end{equation}
+
+where $cost$ respresents the cost of resistors, capacitors and diodes in the circuit.
+
+The value computed was $3.44\times 10^{-2}$, which was lower than what was expected, meaning the circuit could have been more optimized. However, it was felt that the value was satisfying for the purpose of this assignment.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        \input{../mat/MeritTable.tex}
+    \end{tabular}
+    \caption{Merit calculated through Octave}
+    \label{table4a}
+\end{table}
+
+
+
+\par The two following graphs show, first, the voltages from the transformer, the Envelope
+Detector, the Voltage Regulator and, second, the deviation from the desired DC.
+
+
+\begin{figure}[H]
+	\includegraphics[width=0.5\linewidth]{all_vout.eps}
+	\centering
+	\caption{Voltage of the rectifier, Voltage of Envelope Detector and Voltage Regulator}
+	\label{pha}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=0.5\linewidth]{deviation.eps}
+	\centering
+	\caption{$v_0-12$ (Deviation from the desired DC voltages)}
+	\label{pha}
+\end{figure}
+
+
+
