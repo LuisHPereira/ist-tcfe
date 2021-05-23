@@ -1,0 +1,53 @@
+\section{Theoretical Analysis}
+\label{sec:analysis}
+\paragraph{}
+
+\par In the Introduction section, it was explained how the circuit was divided into two stages: a Gain Stage and an Output stage. Resorting to this information, it is possible to deduct a Theoretical Model, to which we can apply the Operating Point analysis in order to obtain the values for gain, input and output voltages.
+\par This was made possible by the equations given by the professor and the information transmitted through the lectures.
+\par The values desired for the Gain stage are presented in the table below:
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        \input{../mat/GS.tex}
+    \end{tabular}
+    \caption{Gain Stage}
+    \label{table4a}
+\end{table}
+\par The same values but for the output stage are shown in the following table:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        \input{../mat/OS.tex}
+    \end{tabular}
+    \caption{Output Stage}
+    \label{table4a}
+\end{table}
+
+\par The values for gain and input and output impedances for the full circuit is shown in the following table:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        \input{../mat/TOTAL.tex}
+    \end{tabular}
+    \caption{Full circuit}
+    \label{table4a}
+\end{table}
+
+
+
+\par A plot for the frequency response can then be made, as one can observe in the figure below:
+
+\begin{figure}[H]
+	\includegraphics[width=0.5\linewidth]{gain.eps}
+	\centering
+	\caption{Gain plot - $\frac{V_o(f)}{V_i(f)}$}
+	\label{pha}
+\end{figure}
+
+

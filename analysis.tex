@@ -1,0 +1,21 @@
+\section{Theoretical Analysis}
+\label{sec:analysis}
+\paragraph{}
+
+\par Firstly, we used a transformer with the objective of lowering the input voltage of 230V, so that the voltage regulator could then turn that value into an voltage around 12V in order to be outputed. Added to this, it is also necessary to take into consideration that the input current is alternate and that the output has to conduct Direct Current. TO make the shift between the two, we used:
+\par \bold{1:} A full wave rectifier, which is meant to transform AC into an unidirectional current, with constant amplitude. In order to mathematically achieve this, we used the absolute value of the sinusoidal function created by the output function: $V_r$
+\par \bold{2:} A capacitor that reduces the voltage magnitude, rounding it to DC. In octave, we divided the times in which the diodes were ON and OFF, given that: 
+\begin{equation}
+	t_OFF= \frac{1}{w} arctan(frac{1}{wR1C}). 
+\end{equation}
+For $t<t_OFF$, $V_O=V_r$, and for $t>t_OFF$:
+\begin{equation}
+	V_O=V_scos(wt_OFF)exp(-frac{t-t_OFF}{R1C}), 
+\end{equation}
+because of the presence of the capacitor. The ripple voltage will then be the difference between the maximum and minimum values of $V_0$. We then renamed it $V_{OENV}$.
+\par \bold{3:} A series of 20 diodes to perfect the DC. The data from \bold{2:} also allows for the calculation of $V_{0AVG}$, the average value of $V_0$. This values lets us know if the voltage drop between $V_5$ and $V_0$ is within the boundaries of what can be handled by the series of diodes. Given that these values are calculated from the DC, in order to obtain the same values for the AC, the following expression needs to be applied:
+\begin{equation}
+	V_{OAC} = #diodes \frac{R_D}{#diodes R_D + R_2}( V_{OENV} - V_{OAVG}),
+\end{equation}
+in which $R_D$ is the resistance of each diode.
+

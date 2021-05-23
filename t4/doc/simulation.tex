@@ -1,0 +1,112 @@
+\section{Simulation Analysis}
+\label{sec:simulation}
+\paragraph{}
+\par This section of the report provides the reader with the results obtained through NGSpice simulations. The main goal to be achieved through these was to determine and optimize gain values, lower and upper cut off frequencies and the bandwidth. The steps taken were the following:
+\begin{itemize}
+	\item Use the complex Phillips transistor model provided by the professor to design the circuit.
+	\item Verify that the transistor operation is in the forward active region (F.A.R mode).
+\end{itemize}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/pnp_TAB.tex}
+  \end{tabular}
+  \caption{Verification F.A.R. mode for the PNP transistor}
+  \label{sim1}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/npn_TAB.tex}
+  \end{tabular}
+  \caption{Verification F.A.R. mode for the NPN transistor}
+  \label{sim1}
+\end{table}
+
+\begin{itemize}
+	\item Compute currents and nodal voltages for the OP.
+	\item Measure output voltage gain, lower and upper cutoff frequencies and bandwidth in the frequency domain. The results obtained were the following:
+\end{itemize}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/sim_TAB.tex}
+  \end{tabular}
+  \caption{Results obtained in NgSpice}
+  \label{sim1}
+\end{table}
+
+
+\par The values outlined in table \ref{sim1} allowed the group to understand the purpose behind the different components present in the circuit. The conclusions drawn were that the \textbf{coupling capacitors} block DC signals, also having a direct influence in the bandwidth; the \textbf{bypass capacitor} acts as a short circuit for higher frequencies (AC) and an open circuit for lower frequencies (DC), bypassing the resistor and neglecting its negative effect on gain, while the \textbf{Rc resistor} has a direct effect on gain values.
+\par These effects are directly shown graphically through the graphs presented below.
+
+\begin{figure}[H]
+    \includegraphics[width=0.495\linewidth]{../sim/vo2f.pdf}
+    \centering
+    \caption{$v_0-12$ (Deviation from the desired DC voltages)}
+    \label{mag}
+\end{figure}
+
+\begin{itemize}
+	\item Determine input and output impedance.
+\end{itemize}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/zin_TAB.tex}
+    \input{../sim/zout_TAB.tex}
+  \end{tabular}
+  \caption{Input and Output impedance}
+  \label{sim1}
+\end{table}
+
+
+\begin{itemize}
+	\item Compute cost and figure of merit to determine whether the amplifier is efficient. 
+\end{itemize}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/merit_TAB.tex}
+  \end{tabular}
+  \caption{Merit}
+  \label{sim1}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
