@@ -1,0 +1,65 @@
+\section{Conclusion}
+\label{sec:conclusion}
+\paragraph{}
+\par The first element of this conclusion will be the comparison between theoretical results and the ones obtained using NGSpice. The first comparisson will be between the theoretical values and simulation ones:
+
+\begin{table}[H]
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\begin{tabular}{|c|c|}
+		\hline
+		\input{../mat/analysistab.tex}
+		\input{../mat/frequencytab.tex}
+		\end{tabular}
+		\caption{Theoretical Analysis}
+		\label{table1a}
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\begin{tabular}{|c|c|}
+		\hline
+		\input{../sim/zin_tab.tex}
+		\input{../sim/zo_TAB.tex}
+		\input{../sim/simulation_tab.tex}
+	\end{tabular}
+		\caption{Simulation Analysis}
+		\label{table1b}
+	\end{minipage} 
+\end{table}
+
+\par Then, the comparisson between frequency responses for gain and phase is presented:
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{gain.eps}
+  \caption{Theoretical Analysis - Gain [dB]}
+  \label{fig:sim4}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{phase.eps}
+  \caption{Theoretical Analysis - Phase [° ]}
+  \label{fig:sim5}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{../sim/vo1f.pdf}
+  \caption{Simulation Analysis - Gain [dB]}
+  \label{fig:sim4}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{../sim/vo2f.pdf}
+  \caption{Simulation Analysis - Phase [° ]}
+  \label{fig:sim5}
+\end{subfigure}
+\end{figure}
+
+\par With all this information, it is clear that despite there being very small differences between the tabled results, the graphs, mainly the phase ones, have a large discrepancy. This can be due to the model used in NGSpice, which is a much more accurate and complex model than the "ideal" one used in theory and also due to the non linearity of our components, which always brings inaccuracies in the calculations, as it was already stated in previous lab assignments. Despite all this, the model is still really satisfactory, given the accuracy of the values for frequencies and impedances and the similarity in the frequency response for the gain.
+\par To summarize, despite all the boundaries and inaccuracies already explained, the assignment was completed as a whole and in a way the group considers satisfactory not only in theory but also in what would be the model in reality. The Merit obtained in this experience was 5.51315E-05.

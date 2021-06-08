@@ -1,0 +1,45 @@
+\section{Theoretical Analysis}
+\label{sec:analysis}
+\paragraph{}
+
+\par This section has the purpose of analyzing the designed circuit theoretically, resorting to Octave to aid in doing so. Considering the used OpAmp to be ideal, which means its input impedance is infinite and the output impedance is null.
+\par The circuit built is composed of a high pass filter, followed by a low pass filter and finishing on a signal amplifier, all connected in series.
+\par Using calculations learnt in lectures, the values for Gain, $Z_{input}$ and $Z_{output}$ at the central frequency:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        \input{../mat/analysistab.tex}
+    \end{tabular}
+    \caption{Impedances and Gain obtained}
+    \label{table4a}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        \input{../mat/frequencytab.tex}
+    \end{tabular}
+    \caption{Frequencies obtained}
+    \label{table4a}
+\end{table}
+
+\par With this information, it is possible to plot graphs for the frequency response $V_0(f)/V_i(f)$ in a logarithmic scale for both the phase and the gain. These are presented sequentially below:
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{gain.eps}
+  \caption{Gain Frequency Response [dB]}
+  \label{fig:sim4}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{phase.eps}
+  \caption{Phase Frequency Response [° ]}
+  \label{fig:sim5}
+\end{subfigure}
+\end{figure}

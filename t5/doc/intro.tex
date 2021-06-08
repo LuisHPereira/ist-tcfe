@@ -1,0 +1,29 @@
+\section{Introduction}
+\label{sec:introduction}
+\paragraph{}
+\par This lab assignment has the purpose of designing and implementing a BandPass Filter (BPF) into an OpAmp, short for Operational Amplifier, with 1 kHz of central frequency and a gain on said frequency of 40dB. To calculate the quality of the designed filter, the following Merit expression is used:
+\[Merit=\frac{1}{Cost \cdot (GainDeviation + CentralFrequecyDeviation + 10^{-6})}\]
+\par The circuit designed is presented below followed by a table containing the value for each component in units of Volts (V), Ohms ($\Omega$) or Farads (F).
+            
+\begin{figure}[H]
+    \includegraphics[width=0.5\linewidth]{Lab5.pdf}
+    \centering
+    \caption{Studied Circuit}
+    \label{circuit}
+\end{figure}
+\par In the following table, the values for the components are presented, with the units being V, $\Omega$ and F.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        \input{../mat/datatab.tex}
+    \end{tabular}
+    \caption{Initial Values}
+    \label{table4a}
+\end{table}
+
+\par In Section~\ref{sec:analysis}, a theoretical analysis of the circuit is
+presented. In Section~\ref{sec:simulation}, the circuit is analysed by
+simulation using NGSpice, with its results being compared to the theoretical results obtained in
+Section~\ref{sec:analysis} in the Section~\ref{sec:conclusion}, while also outlining in this section the conclusions of this study.	

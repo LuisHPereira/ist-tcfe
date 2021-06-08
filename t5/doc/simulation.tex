@@ -1,0 +1,54 @@
+\section{Simulation Analysis}
+\label{sec:simulation}
+\paragraph{}
+\par This section consists of the analysis of the results obtained through simulation made in NGSpice.
+\par With the provided OpAmp model, the group's circuit is inserted and analyzed while continuously altering some of the components in order to optimize the quality of the analysis and of the BPF.
+\par After several iterations, the group came to the following values, which it considered to be the most adequate for the experience. The values obtained from that iteration are the following:
+		
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/Zin_tab.tex}
+  \end{tabular}
+  \caption{Input Impedance}
+  \label{sim1}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/Zo_tab.tex}
+  \end{tabular}
+  \caption{Output Impedance}
+  \label{sim1}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline    
+    \input{../sim/simulation_tab.tex}
+    \input{../sim/merit_tab.tex}
+  \end{tabular}
+  \caption{Simulation results}
+  \label{sim1}
+\end{table}
+\par With those values, the merit obtained was 5.51315E-05.
+\par With all that information, the plots below show the frequency response for the same parameters as it did in the Theoretical Analysis section, phase and gain:
+
+\begin{figure}[H]
+    \includegraphics[width=0.495\linewidth]{../sim/vo1f.pdf}
+    \centering
+    \caption{Gain Frequency Response [dB]}
+    \label{mag}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.495\linewidth]{../sim/vo2f.pdf}
+    \centering
+    \caption{Phase Frequency Response [° ]}
+    \label{mag}
+\end{figure}
